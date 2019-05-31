@@ -9,7 +9,7 @@ var playerAP=0;
 var defenderName="";
 var defenderHP=0;
 var defenderDP=0;
-var round=0;
+var round=1;
 var attackMod=0;
 var btnTxt="";
 var characters = {
@@ -50,8 +50,8 @@ $("#attackBtn").attr("disabled", true);
 function playGame(){
 
     $(".charBtn").on("click", function() {
-        console.log("Clicked");
-        if (round > 0) {
+        console.log("Clicked " + $(this).attr("name"));
+        if (round > 1) {
             $("#defenderPlaceholder").empty();
             console.log("round:"+ round);
             defenderHP=parseInt($(this).attr("HP"));
@@ -67,7 +67,8 @@ function playGame(){
             console.log("Defender DP: " + defenderDP);
            $(this).remove();
            $(".charBtn").attr("disabled", true);
-           battle();
+           $("#attackBtn").attr("disabled", false);
+           
 
         } else if (isPlayerChosen){
              defenderHP=parseInt($(this).attr("HP"));
@@ -133,7 +134,7 @@ function battle(){
             playerAP+=attackMod;
             $("#defenderStats").html("HP:" + defenderHP + "DP:" + defenderDP);
             console.log("Defender hp:" + defenderHP);
-            if (defenderHP > 0) {
+            if (defenderHP >0) {
                 playerHP-=defenderDP;
                 $("#playerStats").html("HP:" + playerHP + "AP:" + playerAP);
                 console.log("Player HP:" + playerHP);
