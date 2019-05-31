@@ -68,6 +68,8 @@ function playGame(){
            $(this).remove();
            $(".charBtn").attr("disabled", true);
            $("#attackBtn").attr("disabled", false);
+           $("#attackBtn").html("Attack!");
+
            
 
         } else if (isPlayerChosen){
@@ -140,9 +142,11 @@ function battle(){
                 console.log("Player HP:" + playerHP);
                 if (playerHP <=0) {
                     console.log ("You Lose");
+                    $("#attackBtn").html("You Lost");
                 }
             } else {
                 console.log("You Win");
+                $("#attackBtn").html("You Won Round "+ round +"! " + "Choose another enemy");
                 $("#currentDefender").clone().appendTo("#defenderLosers");
                 $("#defenderStats").html("");
                 $("#defenderPlaceholder").empty();
