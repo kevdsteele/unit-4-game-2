@@ -34,3 +34,8 @@ background-repeat: no-repeat;
 opacity:.75;
 
 }
+
+#playerStats, #defenderStats {
+font-size:24px;
+color:white;
+}
