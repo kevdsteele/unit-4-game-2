@@ -58,7 +58,7 @@ function playGame(){
             defenderDP=parseInt($(this).attr("DP"));
             playerName=$(this).attr("name");
             btnTxt=playerName;
-            $("#defenderStats").html("HP:" + defenderHP + "DP:" + defenderDP);
+            $("#defenderStats").html("HP:" + defenderHP + "&nbsp"+ "DP:" + defenderDP);
             $(this).html(btnTxt);
             $(this).attr("id", "currentDefender");
            
@@ -77,7 +77,7 @@ function playGame(){
              btnTxt=playerName;
              $(this).html(btnTxt);
              $(this).attr("id", "currentDefender");
-             $("#defenderStats").html("HP:" + defenderHP + "DP:" + defenderDP);
+             $("#defenderStats").html("HP:" + defenderHP + "&nbsp"+"DP:" + defenderDP);
              $(this).clone().appendTo("#defenderPlaceholder");
              console.log("Defender HP: " + defenderHP);
              console.log("Defender DP: " + defenderDP);
@@ -94,7 +94,7 @@ function playGame(){
             btnTxt=playerName; 
             attackMod=playerAP;
             $(this).html(btnTxt);
-            $("#playerStats").html("HP:" + playerHP + "AP:" + playerAP);
+            $("#playerStats").html("HP:" + playerHP + "&nbsp"+ "AP:" + playerAP);
             $(this).clone().appendTo("#playerPlaceholder"); 
             console.log("Player HP: " + playerHP);
              console.log("Player DP: " + playerAP);
@@ -132,11 +132,11 @@ function battle(){
         if (playerHP && defenderHP > 0) {
             defenderHP-=playerAP;
             playerAP+=attackMod;
-            $("#defenderStats").html("HP:" + defenderHP + "DP:" + defenderDP);
+            $("#defenderStats").html("HP:" + defenderHP + "&nbsp"+ "DP:" + defenderDP);
             console.log("Defender hp:" + defenderHP);
             if (defenderHP >0) {
                 playerHP-=defenderDP;
-                $("#playerStats").html("HP:" + playerHP + "AP:" + playerAP);
+                $("#playerStats").html("HP:" + playerHP + "&nbsp"+ "AP:" + playerAP);
                 console.log("Player HP:" + playerHP);
                 if (playerHP <=0) {
                     console.log ("You Lose");
