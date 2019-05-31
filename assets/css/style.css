@@ -1,1 +1,26 @@
 @import "reset.css";
+
+.charBtn {
+color:white;
+font-size:18px;
+height: 200px;
+width: 200px;
+}
+
+.playerSquare {
+height:200px;
+width:200px;
+}
+
+.back-image {
+
+height:400px;
+
+}
+
+body {
+    background-image: url("../images/wp3071036.jpg");
+background-repeat: no-repeat;
+opacity:.75;
+
+}
