@@ -8,43 +8,37 @@ width: 200px;
 }
 
 #attackBtn{
-    vertical-align: top;
-    color:red;
+   margin-left:75px;
+    color:darkred;
     font-size:20px;
     font-weight:bold;
     height: 200px;
-    width: 200px;  
-    background-image: url("../images/battle.png");
-    background-repeat: no-repeat;
-    border:2px solid red;
+    width: 250px;  
+  
+    
 }
 
-#attackBtn:disabled{
-color:grey;
-border:none;
-}
 
-.playerSquare {
+
+.playerSquare{
 height:200px;
 width:200px;
 }
 
-.back-image {
 
-height:400px;
-
-}
 
 body {
-    background-image: url("../images/wp3071036.jpg");
+background-image: url("../images/wp3071036.jpg");
 background-repeat: no-repeat;
-opacity:.75;
+margin-left:0px;
+
 
 }
 
 #playerStats, #defenderStats {
 font-size:24px;
 color:white;
+margin-left: 75px;
 }
 
 h2 {
@@ -53,3 +47,64 @@ color:white;
 padding-top:10px;
 padding-bottom:10px;
 }
+
+.charBox {
+color:white;
+
+height:200px;
+width:200px;
+margin-left:0;
+margin-right:0;
+margin-bottom:5px;
+margin-top:5px;
+padding-left:0;
+padding-right:0;
+border:solid 1px black;
+}
+
+#Row1player1, #Row1player2,#Row1player3,#Row1player4{
+padding-left:20px;
+text-align: center;
+
+}
+
+#Row1player1 {
+    
+background-color:steelblue
+    }
+
+#Row1player2{
+        
+background-color:green;}
+        
+#Row1player3 {
+            
+background-color:darkred;
+            }
+
+#Row1player4{
+                
+background-color:grey;
+                }
+
+#Row2player1,#Row2player2,#Row2player3,#Row2player4 {
+padding-top:10px;
+
+}
+
+#Row3player1, #Row3player2,#Row3player3,#Row3player4 {
+    padding-top:5px;
+    padding-bottom:5px;
+    }
+
+#game-characters{
+padding-left:0;
+padding-right:0;
+}
+
+.centered {
+    position: absolute;
+    bottom:5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

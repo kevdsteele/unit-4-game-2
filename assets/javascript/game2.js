@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 
 var isPlayerChosen=false;
+var isDefenderChosen=false;
 var playerName="";
 var playerHP=0;
 var playerAP=0;
@@ -47,7 +48,6 @@ var characters = {
 $("#attackBtn").attr("disabled", true);
 
 function playGame(){
-    $("#attack-img").hide();
 
     $(".charBox").on("click", function() {
         console.log("Clicked " + $(this).attr("name"));
@@ -60,18 +60,15 @@ function playGame(){
             btnTxt=playerName;
             $("#defenderStats").html("HP:" + defenderHP + "&nbsp"+ "DP:" + defenderDP);
             $(this).html(btnTxt);
-           
+            $(this).attr("id", "currentDefender");
            
             $(this).clone().appendTo("#defenderPlaceholder");
             console.log("Defender HP: " + defenderHP);
             console.log("Defender DP: " + defenderDP);
            $(this).remove();
-           $(".charBox").css("pointer-events", "none");
+           $(".charBox").attr("disabled", true);
            $("#attackBtn").css("pointer-events", "auto");
-           $("#attack-img").fadeTo("slow" , 1.0, function() {
-                    
-        });
-           $("#attack-text").text("Attack!");
+           $("#attackBtn").text("Attack!");
 
            
 
@@ -81,12 +78,13 @@ function playGame(){
              playerName=$(this).attr("name");
              btnTxt=playerName;
              $(this).html(btnTxt);
+             $(this).attr("id", "currentDefender");
              $("#defenderStats").html("HP:" + defenderHP + "&nbsp"+"DP:" + defenderDP);
              $(this).clone().appendTo("#defenderPlaceholder");
              console.log("Defender HP: " + defenderHP);
              console.log("Defender DP: " + defenderDP);
             $(this).remove();
-            $(".charBox").css("pointer-events", "none");
+            $(".charBtn").attr("disabled", true);
             battle();
             
         }
@@ -97,7 +95,7 @@ function playGame(){
             playerName=$(this).attr("name");
             btnTxt=playerName; 
             attackMod=playerAP;
-            /*$(".stats").html("HP:" + playerHP + "&nbsp"+ "AP:" + playerAP);*/
+            $(this).html(btnTxt);
             $("#playerStats").html("HP:" + playerHP + "&nbsp"+ "AP:" + playerAP);
             $(this).clone().appendTo("#playerPlaceholder"); 
             console.log("Player HP: " + playerHP);
@@ -116,9 +114,6 @@ function initializeChars () {
         var charDiv1 = $("<div>");
         charDiv1.addClass("row charBox");
         charDiv1.attr("id", "Row1"+x);
-        charDiv1.attr("HP", characters[x].HP);
-        charDiv1.attr("AP", characters[x].AP);
-        charDiv1.attr("DP", characters[x].DP);
         var charDiv2= $("<div>");
         
         charDiv2.attr("id", "Row2"+x);
@@ -128,9 +123,11 @@ function initializeChars () {
         charDiv3.attr("id", "Row3"+x);
         charDiv3.html("<img src='" + characters[x].image + "'>");
         var charDiv4 = $("<div>");
-        charDiv4.addClass("stats", "HP:" + playerHP + "&nbsp"+ "AP:" + playerAP);
-        charDiv4.attr("id", "Row4"+x);
         
+        charDiv4.attr("id", "Row4"+x);
+        charDiv4.attr("HP", characters[x].HP);
+        charDiv4.attr("AP", characters[x].AP);
+        charDiv4.attr("DP", characters[x].DP);
         charDiv4.html("HP: " + characters[x].HP  + "&nbsp"+ "AP: " + characters[x].AP + "&nbsp" + "DP: " +characters[x].DP );
         $("#game-characters").append(charDiv1);
         $("#playerChoices").append(charDiv1);
@@ -153,10 +150,6 @@ function initializeChars () {
 
 function battle(){
     $("#attackBtn").css("pointer-events", "auto");
-    $("#attack-img").fadeTo("slow" , 1.0, function() {
-                    
-    });
-    $("#attack-text").text("Attack!")
     $("#attackBtn").on("click", function() {
         
         
@@ -172,18 +165,15 @@ function battle(){
                 console.log("Player HP:" + playerHP);
                 if (playerHP <=0) {
                     console.log ("You Lose");
-                    $("#attack-text").text("You Lost");
+                    $("#attackBtn").text("You Lost");
                 }
             } else {
                 console.log("You Win");
-                $("#attack-img").fadeTo("slow" , 0.25, function() {
-                    
-                  });
-                $("#attack-text").text("You Won Round "+ round +"! " + "Choose another enemy");
-                $("#defenderPlaceholder").clone().appendTo("#defenderLosers");
+                $("#attackBtn").html("You Won Round "+ round +"! " + "Choose another enemy");
+                $("#currentDefender").clone().appendTo("#defenderLosers");
                 $("#defenderStats").html("");
                 $("#defenderPlaceholder").empty();
-                $(".charBox").css("pointer-events", "auto");
+                $(".charBtn").attr("disabled", false);
                 round++;
                 $("#attackBtn").css("pointer-events", "none");
                 playGame();
