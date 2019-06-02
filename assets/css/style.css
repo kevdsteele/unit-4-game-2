@@ -18,6 +18,11 @@ width: 200px;
     
 }
 
+#playerHeading{
+padding-left-0;
+
+}
+
 
 
 .playerSquare{
@@ -35,8 +40,14 @@ margin-left:0px;
 
 }
 
+.progress-bar {
+font-size:10px;
+}
+
 #playerStats, #defenderStats {
-font-size:24px;
+
+
+font-size:20px;
 color:white;
 margin-left: 75px;
 }
@@ -46,6 +57,7 @@ font-size:24px;
 color:white;
 padding-top:10px;
 padding-bottom:10px;
+padding-left: 25px;
 }
 
 .charBox {
