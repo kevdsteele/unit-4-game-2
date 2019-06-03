@@ -127,6 +127,14 @@ function playGame(){
 function initializeChars () {
     for (x in characters) {
         numberCharacters++;
+      
+        var charCardHolder = $("<div>");
+        charCardHolder.addClass("row card is-flipped");
+      
+        var charCardFace = $("<div>");
+        charCardFace.addClass("row card__face card__face--front");
+      
+        
         var charDiv1 = $("<div>");
         charDiv1.addClass("row charBox");
         charDiv1.attr("id", "Row1"+x);
@@ -138,6 +146,7 @@ function initializeChars () {
         var charDiv2= $("<div>");
         
         charDiv2.attr("id", "Row2"+x);
+        charDiv1.addClass("card__face card__face--front");
         charDiv2.text(characters[x].name);
         var charDiv3 = $("<div>");
         
