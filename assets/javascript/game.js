@@ -59,6 +59,10 @@ $("#attackBtn").attr("disabled", true);
 
 function playGame(){
     $("#attack-img").hide();
+  
+    $(".card").on("mouseover", function() {
+  card.classList.toggle('is-flipped');
+});
 
     $(".charBox").on("click", function() {
         console.log("Clicked " + $(this).attr("name"));
