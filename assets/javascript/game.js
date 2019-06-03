@@ -176,13 +176,13 @@ function initializeChars () {
      
        
         $("#playerChoices").append(charCardHolder);
-        $("#cardHolder").append(charCardFace);
-        $("#cardFace").append(charDiv1);
+        $("#cardHolder"+x).append(charCardFace);
+        $("#cardFace"+x).append(charDiv1);
         $("#Row1"+x).append(charDiv2);
         $("#Row2"+x).append(charDiv3);
         $("#Row3"+x).append(charDiv4);
         $("#Row4"+x).append(charDiv5);
-        $("#cardHolder").append(charCardBack);
+        $("#cardHolder"+x).append(charCardBack);
       
        /*btnTxt = characters[x].name + "<br>" +"<br>" + "<br>" + "<br>"+ "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "HP:" + characters[x].HP + "&nbsp" + "AP:" + characters[x].AP +  "&nbsp"+"DP:" + characters[x].DP;
         charBtn.addClass("charBtn btn btn-block");
