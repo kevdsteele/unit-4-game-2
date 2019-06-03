@@ -61,7 +61,7 @@ function playGame(){
     $("#attack-img").hide();
   
     $(".card").on("mouseover", function() {
-  $(this).classList.toggle('is-flipped');
+  $(this).classList.toggle("is-flipped");
 });
 
     $(".charBox").on("click", function() {
