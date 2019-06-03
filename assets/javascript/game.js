@@ -129,15 +129,15 @@ function initializeChars () {
         numberCharacters++;
       
         var charCardHolder = $("<div>");
-        charCardHolder.addClass("card");
+        charCardHolder.addClass("row card");
         charCardHolder.attr("id", "cardHolder"+x);
       
         var charCardFace = $("<div>");
-        charCardFace.addClass("card__face card__face--front");
+        charCardFace.addClass("row card__face card__face--front");
         charCardFace.attr("id", "cardFace"+x);
       
         var charCardBack = $("<div>");
-        charCardBack.addClass("card__face card__face--back");
+        charCardBack.addClass("row card__face card__face--back");
         charCardBack.attr("id", "cardBack"+x);
         charCardBack.html(characters[x].backtext);
         
