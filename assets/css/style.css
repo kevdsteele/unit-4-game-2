@@ -125,6 +125,7 @@ padding-right:0;
 .scene {
  width:150px;
  height:165px;
+ perspective:600px;
 }
 
 .card {card
