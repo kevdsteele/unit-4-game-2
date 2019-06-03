@@ -1,0 +1,111 @@
+.banner{
+background-image: url("../images/background.jpg");
+background-color: black;
+background-size: cover;
+height: 100%;
+background-repeat: no-repeat;
+color:lightgray;
+font-family: 'Star Jedi', Arial, Helvetica, sans-serif;
+font-style: bold;
+text-align:center;
+text-shadow: 4px 4px 4px darkred;
+margin-bottom:1%;
+
+}
+
+body {
+background-image: url("../images/DeathStar10-13.jpg");
+
+background-repeat: no-repeat;
+height:100%;
+background-position: 0% 20%;
+font-family: 'Star Jedi', Arial, Helvetica, sans-serif;
+color:white;
+background-color: black;
+
+}
+
+#player-choices {
+text-align:center;
+padding-top:2%;
+
+
+
+}
+
+.character-card {
+padding-top:10px;
+padding-bottom:5px;
+color:white;
+font-size:12px;
+
+
+}
+
+
+.card-col {
+padding-left: 5px;
+padding-right: 5px;
+text-align: center;
+
+}
+
+.card-size {
+width:100%;
+
+}
+
+.character-container {
+width:50%;
+}
+
+.progress{
+height:25px;
+
+}
+
+.game-container {
+   
+  
+}
+
+#playerPlaceholder, #defenderPlaceholder {
+text-align:center;
+
+}
+
+.attack-img {
+padding-left:18%;
+}
+
+.attack-text {
+color:white;
+text-align: center;
+text-shadow: 4px 4px 4px darkred;
+}
+
+#attack-section {
+text-align:center;
+display:none;
+
+}
+
+#battle-area {
+padding-top:5%;
+}
+
+#alert-text {
+color: white;
+font-size: 16px;
+padding-top: 5%;
+text-shadow: 4px 4px 4px darkred;
+text-align:center;
+
+
+}
+
+.btn-row {
+text-align:center;
+padding-top: 3%;
+display:none;
+}

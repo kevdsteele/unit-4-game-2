@@ -145,7 +145,7 @@ function initializeChars () {
         charDiv4.attr("id", "Row4"+x);
 
         var charDiv5=$("<div>");
-        charDiv5.addClass("progress-bar")
+        charDiv5.addClass("progress-bar bg-danger");
         charDiv5.attr("id", x);
         charDiv5.attr("role", "progressbar");
         charDiv5.attr("aria-valuenow",characters[x].HP );
@@ -153,9 +153,7 @@ function initializeChars () {
         charDiv5.attr("aria-valuemin",0);
         charDiv5.html(characters[x].HP +" HPs");
         charDiv5.attr("style" , "width: 100%");
-
         
-       
        
         $("#playerChoices").append(charDiv1);
         $("#Row1"+x).append(charDiv2);
@@ -182,7 +180,7 @@ function battle(){
     });
     $("#attack-text").text("Attack!")
     $("#attackBtn").on("click", function() {
-        
+        $("#attackAudio")[0].play();
         
         console.log("player AP:"+ playerAP);
         if (playerHP && defenderHP > 0) {
@@ -208,6 +206,7 @@ function battle(){
                     
                     });
                     $("#attack-text").text("You Lost");
+                    
                 }
             } else {
                 console.log("You Win");
