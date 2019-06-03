@@ -119,9 +119,12 @@ padding-right:0;
   }
 
 .scene {
+ padding-left:0px;
+ padding-right:0px;
  width:150px;
  height:165px;
  perspective:600px;
+   
 }
 
 .card {card
