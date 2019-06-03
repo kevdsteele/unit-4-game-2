@@ -24,7 +24,8 @@ var characters = {
         "HP": 135,
         "AP": 8,
         "DP": 10,
-        "image": "assets/images/luke.jpg"
+        "image": "assets/images/luke.jpg",
+        "back-text": "Red 5 Standing By"
 
     },
     "player2" : {
@@ -32,21 +33,24 @@ var characters = {
         "HP": 200,
         "AP": 25,
         "DP": 20,
-        "image": "assets/images/yoda.png"
+        "image": "assets/images/yoda.png",
+      "back-text": "Do or Do not. There is no try!"
     },
     "player3" : {
         "name": "Darth Vader",
         "HP": 150,
         "AP": 25,
         "DP": 15,
-        "image": "assets/images/dv.jpg"
+        "image": "assets/images/dv.jpg",
+      "back-text": "Do not underestimate the power of the Dark Side"
     },
     "player4" : {
         "name": "Darth Sidiuus",
         "HP": 175,
         "AP": 25,
         "DP": 25,
-        "image": "assets/images/ds.jpg"
+        "image": "assets/images/ds.jpg",
+      "back-text": "You will join us or Die!"
     }
 
 }
