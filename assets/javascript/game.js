@@ -25,7 +25,7 @@ var characters = {
         "AP": 8,
         "DP": 10,
         "image": "assets/images/luke.jpg",
-        "back-text": "Red 5 Standing By"
+        "backtext": "Red 5 Standing By"
 
     },
     "player2" : {
@@ -34,7 +34,7 @@ var characters = {
         "AP": 25,
         "DP": 20,
         "image": "assets/images/yoda.png",
-      "back-text": "Do or Do not. There is no try!"
+      "backtext": "Do or Do not. There is no try!"
     },
     "player3" : {
         "name": "Darth Vader",
@@ -42,7 +42,7 @@ var characters = {
         "AP": 25,
         "DP": 15,
         "image": "assets/images/dv.jpg",
-      "back-text": "Do not underestimate the power of the Dark Side"
+      "backtext": "Do not underestimate the power of the Dark Side"
     },
     "player4" : {
         "name": "Darth Sidiuus",
@@ -50,7 +50,7 @@ var characters = {
         "AP": 25,
         "DP": 25,
         "image": "assets/images/ds.jpg",
-      "back-text": "You will join us or Die!"
+      "backtext": "You will join us or Die!"
     }
 
 }
@@ -139,7 +139,7 @@ function initializeChars () {
         var charCardBack = $("<div>");
         charCardBack.addClass("row card__face card__face--back");
         charCardBack.attr("id", "cardBack"+x);
-        charCardBack.html(characters[x].back-text);
+        charCardBack.html(characters[x].backtext);
         
         var charDiv1 = $("<div>");
         charDiv1.addClass("row charBox");
