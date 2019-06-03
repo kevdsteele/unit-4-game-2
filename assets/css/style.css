@@ -26,8 +26,8 @@ padding-left-0;
 
 
 .playerSquare{
-height:200px;
-width:200px;
+height:150px;
+width:165px;
 }
 
 
@@ -42,6 +42,7 @@ margin-left:0px;
 
 .progress-bar {
 font-size:10px;
+
 }
 
 #playerStats, #defenderStats {
@@ -62,23 +63,19 @@ padding-left: 25px;
 
 .charBox {
 color:white;
-
-height:200px;
-width:200px;
+font-size:12px;
+height:100%;
+width:100%;
 margin-left:0;
 margin-right:0;
-margin-bottom:5px;
-margin-top:5px;
-padding-left:0;
-padding-right:0;
-border:solid 1px black;
+
 }
 
-#Row1player1, #Row1player2,#Row1player3,#Row1player4{
+/*#Row1player1, #Row1player2,#Row1player3,#Row1player4{
 padding-left:20px;
 text-align: center;
 
-}
+}*/
 
 #Row1player1 {
     
@@ -120,3 +117,53 @@ padding-right:0;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+.scene {
+ padding-left:0px;
+ padding-right:0px;
+ width:150px;
+ height:165px;
+ perspective:600px;
+   
+}
+
+.card {card
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  margin-right:0px;
+ margin-left:0px;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  margin-right:0px;
+  margin-left:0px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+ 
+}
+
+.card__face--back {
+  background-color:black;
+   line-height:150px;
+   color:white;
+   text-align:center;
+  transform: rotateY(180deg);
+}
+
+.is-flipped {
+margin-right:0px;
+margin-left:0px;
+
