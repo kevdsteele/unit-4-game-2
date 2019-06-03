@@ -157,6 +157,7 @@ padding-right:0;
 
 .card__face--back {
   background-color:black;
+   line-height:150px;
    color:white;
    text-align:center;
   transform: rotateY(180deg);
