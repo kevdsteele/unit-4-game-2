@@ -64,15 +64,11 @@ padding-left: 25px;
 .charBox {
 color:white;
 font-size:12px;
-height:150px;
-width:165px;
+height:100%;
+width:100%;
 margin-left:0;
 margin-right:0;
-margin-bottom:5px;
-margin-top:5px;
-padding-left:0;
-padding-right:0;
-border:solid 1px black;
+
 }
 
 #Row1player1, #Row1player2,#Row1player3,#Row1player4{
@@ -144,8 +140,7 @@ padding-right:0;
 .card__face {
   position: absolute;
   width: 100%;
-  height: 165px;
-   
+  height: 100%;
   backface-visibility: hidden;
 }
 
