@@ -133,7 +133,7 @@ function initializeChars () {
         numberCharacters++;
       
         var charCardHolder = $("<div>");
-        charCardHolder.addClass("row card");
+        charCardHolder.addClass("row card is-flipped");
         charCardHolder.attr("id", "cardHolder"+x);
       
         var charCardFace = $("<div>");
