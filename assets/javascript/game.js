@@ -130,10 +130,16 @@ function initializeChars () {
       
         var charCardHolder = $("<div>");
         charCardHolder.addClass("row card is-flipped");
+        charCardHolder.attr("id", "cardHolder"+x);
       
         var charCardFace = $("<div>");
         charCardFace.addClass("row card__face card__face--front");
+        charCardFace.attr("id", "cardFace"+x);
       
+        var charCardBack = $("<div>");
+        charCardBack.addClass("row card__face card__face--back");
+        charCardBack.attr("id", "cardBack"+x);
+        charCardBacl.html(characters[x].back-text);
         
         var charDiv1 = $("<div>");
         charDiv1.addClass("row charBox");
@@ -167,12 +173,17 @@ function initializeChars () {
         charDiv5.html(characters[x].HP +" HPs");
         charDiv5.attr("style" , "width: 100%");
         
+       charCardHolder
        
-        $("#playerChoices").append(charDiv1);
+        $("#playerChoices").append(charCardHolder);
+        $("#cardHolder").append(charCardFace);
+        $("#cardFace").append(charDiv1);
         $("#Row1"+x).append(charDiv2);
         $("#Row2"+x).append(charDiv3);
         $("#Row3"+x).append(charDiv4);
         $("#Row4"+x).append(charDiv5);
+        $("#cardHolder").append(charCardBack);
+      
        /*btnTxt = characters[x].name + "<br>" +"<br>" + "<br>" + "<br>"+ "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "HP:" + characters[x].HP + "&nbsp" + "AP:" + characters[x].AP +  "&nbsp"+"DP:" + characters[x].DP;
         charBtn.addClass("charBtn btn btn-block");
         charBtn.attr("name", characters[x].name);
