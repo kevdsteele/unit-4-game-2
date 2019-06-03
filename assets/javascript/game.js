@@ -60,7 +60,7 @@ $("#attackBtn").attr("disabled", true);
 function playGame(){
     $("#attack-img").hide();
   
-    $(".card").on("dblclick", function() {
+    $(".card").on("mouseover", function() {
   $(this).toggleClass("is-flipped");
 });
 
