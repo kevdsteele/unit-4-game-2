@@ -139,7 +139,7 @@ function initializeChars () {
         var charCardBack = $("<div>");
         charCardBack.addClass("row card__face card__face--back");
         charCardBack.attr("id", "cardBack"+x);
-        charCardBacl.html(characters[x].back-text);
+        charCardBack.html(characters[x].back-text);
         
         var charDiv1 = $("<div>");
         charDiv1.addClass("row charBox");
