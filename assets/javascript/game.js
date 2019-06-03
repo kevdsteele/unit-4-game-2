@@ -173,7 +173,7 @@ function initializeChars () {
         charDiv5.html(characters[x].HP +" HPs");
         charDiv5.attr("style" , "width: 100%");
         
-       charCardHolder
+     
        
         $("#playerChoices").append(charCardHolder);
         $("#cardHolder").append(charCardFace);
