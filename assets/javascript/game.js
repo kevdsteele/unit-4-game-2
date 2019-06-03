@@ -60,11 +60,11 @@ $("#attackBtn").attr("disabled", true);
 function playGame(){
     $("#attack-img").hide();
   
-    $(".card").on("mouseover", function() {
+    $(".card").on("dblclick", function() {
   $(this).toggleClass("is-flipped");
 });
 
-    $(".charBox").on("click", function() {
+    $(".card").on("click", function() {
         console.log("Clicked " + $(this).attr("name"));
         if (round > 1) {
             $("#defenderPlaceholder").empty();
