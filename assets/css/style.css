@@ -154,7 +154,7 @@ padding-right:0;
 }
 
 .card__face--back {
-  
+  background-color:black;
   transform: rotateY(180deg);
 }
 
