@@ -138,7 +138,7 @@ function initializeChars () {
         var charDiv3 = $("<div>");
         
         charDiv3.attr("id", "Row3"+x);
-        charDiv3.html("<img src='" + characters[x].image + "'> class='char-img'");
+        charDiv3.html("<img src='" + characters[x].image + "'class='char-img'> ");
         var charDiv4 = $("<div>");
         charDiv4.addClass("progress");
        
