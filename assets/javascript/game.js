@@ -181,7 +181,7 @@ function battle(){
             $("#"+defenderID).attr("aria-valuenow", defenderHP);
             $("#"+defenderID).html(defenderHP);
             $("#"+defenderID).attr("style" , "width: " +  (defenderHP * 100) /defenderStartHP + "%");
-            $("#defenderStats").html(playerName + " did "+ playerAP + " points of damage to " + defenderName);
+            $("#defenderStats").html(playerName +  + "<br/> did " + playerAP + " points of damage to <br/>" + defenderName);
             playerAP+=attackMod;
            
             console.log("Defender hp:" + defenderHP);
@@ -189,7 +189,7 @@ function battle(){
                 playerHP-=defenderDP;
                 $("#"+playerID).html(playerHP);
                 $("#"+playerID).attr("style" , "width: " +  (playerHP * 100) / playerStartHP + "%");
-                $("#playerStats").html(defenderName + "<br>" "did" + defenderDP + " points of damage to" + "<br>" +playerName);
+                $("#playerStats").html(defenderName + "<br/>" "did" + defenderDP + " points of damage to <br/>" +  +playerName);
                
                 console.log("Player HP:" + playerHP);
                 if (playerHP <=0) {
