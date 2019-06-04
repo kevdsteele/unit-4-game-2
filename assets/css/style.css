@@ -24,6 +24,10 @@ padding-left-0;
 }
 
 
+.char-img {
+border-radius: 100%;  
+   
+}   
 
 .playerSquare{
 height:150px;
