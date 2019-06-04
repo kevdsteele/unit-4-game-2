@@ -138,7 +138,7 @@ function initializeChars () {
         var charDiv3 = $("<div>");
         
         charDiv3.attr("id", "Row3"+x);
-        charDiv3.html("<img src='" + characters[x].image + "'>");
+        charDiv3.html("<img src='" + characters[x].image + "'> class='char-img'");
         var charDiv4 = $("<div>");
         charDiv4.addClass("progress");
        
@@ -160,15 +160,7 @@ function initializeChars () {
         $("#Row2"+x).append(charDiv3);
         $("#Row3"+x).append(charDiv4);
         $("#Row4"+x).append(charDiv5);
-       /*btnTxt = characters[x].name + "<br>" +"<br>" + "<br>" + "<br>"+ "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "HP:" + characters[x].HP + "&nbsp" + "AP:" + characters[x].AP +  "&nbsp"+"DP:" + characters[x].DP;
-        charBtn.addClass("charBtn btn btn-block");
-        charBtn.attr("name", characters[x].name);
-        charBtn.attr("HP", characters[x].HP);
-        charBtn.attr("AP", characters[x].AP);
-        charBtn.attr("DP", characters[x].DP);
-        charBtn.html(btnTxt);
-        charBtn.css({"background-image" : "url(" + characters[x].image + ")", "bacgroundRepeat": "no-repeat"});
-        $("#playerChoices").append(charBtn); */
+  
     }
 
 }
