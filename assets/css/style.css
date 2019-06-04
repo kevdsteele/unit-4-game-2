@@ -75,7 +75,8 @@ border:solid 1px black;
 }
 
 #Row1player1, #Row1player2,#Row1player3,#Row1player4{
-padding-left:30px;
+padding-left:5px;
+padding-right:5px;
 text-align: center;
 
 }
