@@ -189,7 +189,7 @@ function battle(){
                 playerHP-=defenderDP;
                 $("#"+playerID).html(playerHP);
                 $("#"+playerID).attr("style" , "width: " +  (playerHP * 100) / playerStartHP + "%");
-                $("#playerStats").html(playerName + " took " + defenderDP + " points of damage from " + defenderName);
+                $("#playerStats").html(defenderName + "<br>" "did" + defenderDP + " points of damage to" + "<br>" + defenderName);
                
                 console.log("Player HP:" + playerHP);
                 if (playerHP <=0) {
