@@ -24,8 +24,7 @@ var characters = {
         "HP": 135,
         "AP": 8,
         "DP": 10,
-        "image": "assets/images/luke.jpg",
-        "backtext": "Red 5 Standing By"
+        "image": "assets/images/luke.jpg"
 
     },
     "player2" : {
@@ -33,24 +32,21 @@ var characters = {
         "HP": 200,
         "AP": 25,
         "DP": 20,
-        "image": "assets/images/yoda.png",
-      "backtext": "Do or Do not. There is no try!"
+        "image": "assets/images/yoda.png"
     },
     "player3" : {
         "name": "Darth Vader",
         "HP": 150,
         "AP": 25,
         "DP": 15,
-        "image": "assets/images/dv.jpg",
-      "backtext": "Do not underestimate the power of the Dark Side"
+        "image": "assets/images/dv.jpg"
     },
     "player4" : {
         "name": "Darth Sidiuus",
         "HP": 175,
         "AP": 25,
         "DP": 25,
-        "image": "assets/images/ds.jpg",
-      "backtext": "You will join us or Die!"
+        "image": "assets/images/ds.jpg"
     }
 
 }
@@ -59,12 +55,8 @@ $("#attackBtn").attr("disabled", true);
 
 function playGame(){
     $("#attack-img").hide();
-  
-    $(".card").on("mouseover", function() {
-  $(this).toggleClass("is-flipped");
-});
 
-    $(".card").on("click", function() {
+    $(".charBox").on("click", function() {
         console.log("Clicked " + $(this).attr("name"));
         if (round > 1) {
             $("#defenderPlaceholder").empty();
@@ -131,20 +123,6 @@ function playGame(){
 function initializeChars () {
     for (x in characters) {
         numberCharacters++;
-      
-        var charCardHolder = $("<div>");
-        charCardHolder.addClass("row card");
-        charCardHolder.attr("id", "cardHolder"+x);
-      
-        var charCardFace = $("<div>");
-        charCardFace.addClass("row card__face card__face--front");
-        charCardFace.attr("id", "cardFace"+x);
-      
-        var charCardBack = $("<div>");
-        charCardBack.addClass("row card__face card__face--back");
-        charCardBack.attr("id", "cardBack"+x);
-        charCardBack.html(characters[x].backtext);
-        
         var charDiv1 = $("<div>");
         charDiv1.addClass("row charBox");
         charDiv1.attr("id", "Row1"+x);
@@ -156,7 +134,6 @@ function initializeChars () {
         var charDiv2= $("<div>");
         
         charDiv2.attr("id", "Row2"+x);
-        charDiv1.addClass("card__face card__face--front");
         charDiv2.text(characters[x].name);
         var charDiv3 = $("<div>");
         
@@ -177,17 +154,12 @@ function initializeChars () {
         charDiv5.html(characters[x].HP +" HPs");
         charDiv5.attr("style" , "width: 100%");
         
-     
        
-        $("#playerChoices").append(charCardHolder);
-        $("#cardHolder"+x).append(charCardFace);
-        $("#cardFace"+x).append(charDiv1);
+        $("#playerChoices").append(charDiv1);
         $("#Row1"+x).append(charDiv2);
         $("#Row2"+x).append(charDiv3);
         $("#Row3"+x).append(charDiv4);
         $("#Row4"+x).append(charDiv5);
-        $("#cardHolder"+x).append(charCardBack);
-      
        /*btnTxt = characters[x].name + "<br>" +"<br>" + "<br>" + "<br>"+ "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "HP:" + characters[x].HP + "&nbsp" + "AP:" + characters[x].AP +  "&nbsp"+"DP:" + characters[x].DP;
         charBtn.addClass("charBtn btn btn-block");
         charBtn.attr("name", characters[x].name);
@@ -280,6 +252,7 @@ playGame();
 
 
 });
+
 
 
 
