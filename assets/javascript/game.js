@@ -23,7 +23,7 @@ var characters = {
         "name": "Luke Skywalker",
         "HP": 135,
         "AP": 8,
-        "DP": 10,
+        "DP": 12,
         "image": "assets/images/luke.jpg"
 
     },
@@ -31,7 +31,7 @@ var characters = {
         "name": "Yoda",
         "HP": 200,
         "AP": 25,
-        "DP": 15,
+        "DP": 12,
         "image": "assets/images/yoda.png"
     },
     "player3" : {
@@ -203,6 +203,7 @@ function battle(){
                     
                     });
                     $("#attack-text").text("You Lost");
+                    $("#restart").show();
                     
                 }
             } else {
