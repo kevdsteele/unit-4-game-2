@@ -25,17 +25,18 @@ background-color: black;
 
 }
 
+
 #player-choices {
 text-align:center;
 padding-top:2%;
-
-
-
 }
 
+/*player card formatting*/
 .character-card {
 padding-top:10px;
 padding-bottom:5px;
+padding-left:0px;
+padding-right:0px;
 color:white;
 font-size:10px;
 font-style: bold;
@@ -43,58 +44,76 @@ font-style: bold;
 
 }
 
+/*cards in bootstrap cols css to pad*/
 
 .card-col {
 padding-left: 5px;
-padding-right: 5px;
+padding-right: 15px;
 text-align: center;
 
 }
 
-.card-size {
-width:100%;
 
-}
-
+/*scaling the bootsrap container - need more work with bootstrap sizing*/
 .character-container {
 width:50%;
+
 }
 
+/*div containing the bootstrap progress bars*/
 .progress{
-height:25px;
+height:20px;
+font-size:12px;
 
 }
 
-.game-container {
-   
-  
+
+/*left section of progress bar*/
+.PBHP {
+font-size:8px;
+text-align: left;
+padding-left:3px;
+
 }
 
+
+/*player card footer area css*/
+.card-footer {
+height:35px;
+
+}
+
+
+/* after player chosen formatting */
 #playerPlaceholder, #defenderPlaceholder {
 text-align:center;
+width:147;
+height:214;
+
 
 }
 
+
+/* format the image used as button to attack*/
 .attack-img {
-padding-left:18%;
+width:125px;
+height:125px;
 }
 
-.attack-text {
-color:white;
-text-align: center;
-text-shadow: 4px 4px 4px darkred;
-}
 
+/* section hidden at start visible during attack*/
 #attack-section {
 text-align:center;
 display:none;
 
 }
 
+/* overall battle area*/
 #battle-area {
 padding-top:5%;
 }
 
+/*text area used for alerts during game */
 #alert-text {
 color: white;
 font-size: 16px;
@@ -105,8 +124,23 @@ text-align:center;
 
 }
 
+/* play aiain button*/
 .btn-row {
 text-align:center;
 padding-top: 3%;
 display:none;
 }
+
+/* formatting for attack and conter attack message*/
+#playerStats  {
+
+min-height:45px;
+font-size:14px;
+}
+
+#defenderStats{
+    font-size:14px;
+
+}
+
+
