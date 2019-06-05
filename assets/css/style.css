@@ -134,3 +134,9 @@ padding-right:0;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  #restart {
+height:30px;
+background-color: darkred;
+color:white;
+  }

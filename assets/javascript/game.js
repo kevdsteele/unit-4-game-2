@@ -31,21 +31,21 @@ var characters = {
         "name": "Yoda",
         "HP": 200,
         "AP": 25,
-        "DP": 20,
+        "DP": 15,
         "image": "assets/images/yoda.png"
     },
     "player3" : {
         "name": "Darth Vader",
         "HP": 150,
         "AP": 25,
-        "DP": 15,
+        "DP": 10,
         "image": "assets/images/dv.jpg"
     },
     "player4" : {
         "name": "Darth Sidiuus",
         "HP": 175,
         "AP": 25,
-        "DP": 25,
+        "DP": 15,
         "image": "assets/images/ds.jpg"
     }
 
@@ -55,6 +55,11 @@ $("#attackBtn").attr("disabled", true);
 
 function playGame(){
     $("#attack-img").hide();
+
+    $("#restart").on("click", function () {
+        location.reload();
+
+    });
 
     $(".charBox").on("click", function() {
         console.log("Clicked " + $(this).attr("name"));
@@ -189,7 +194,7 @@ function battle(){
                 playerHP-=defenderDP;
                 $("#"+playerID).html(playerHP);
                 $("#"+playerID).attr("style" , "width: " +  (playerHP * 100) / playerStartHP + "%");
-                $("#playerStats").html(defenderName + "<br/> did" + defenderDP + " points of damage to <br/>" +  +playerName);
+                $("#playerStats").html(defenderName + "<br/> did " + defenderDP + " points of damage to <br/>"  +playerName);
                
                 console.log("Player HP:" + playerHP);
                 if (playerHP <=0) {
@@ -211,7 +216,7 @@ function battle(){
                 $("#attack-text").text("You Won Round "+ round +"! " + "Choose another enemy");
                 $("#defenderPlaceholder").clone().appendTo("#defenderLosers");
                 $("#defenderStats").html("");
-                $("#playererStats").html("");
+                $("#playerStats").html("");
                 $("#defenderPlaceholder").empty();
                 $(".charBox").css("pointer-events", "auto");
                 round++;
@@ -219,7 +224,12 @@ function battle(){
                 playGame();
                 } else {
 
-                    
+                    $("#attack-text").text("You Won the Game");
+                    $("#restart").show();
+                    $("#defenderPlaceholder").clone().appendTo("#defenderLosers");
+                $("#defenderStats").html("");
+                $("#playerStats").html("");
+                $("#defenderPlaceholder").empty();
                 }
 
             
@@ -234,7 +244,7 @@ function battle(){
     });
 }
 
-
+$("#restart").hide();
 initializeChars();
 playGame();
 
