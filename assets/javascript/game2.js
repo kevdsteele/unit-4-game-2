@@ -252,17 +252,14 @@ $(document).ready(function () {
 
                         if (playerHP <= 0)  {
                         console.log("You Lose");
-                        $("#alert-text").html("You Lose!");
-                        $("#playerPlaceholder").hide();
-                        $('#attack-section').hide();
-                        $(".btn-row").css("display", "block");
+                        
 
-                        } /*else {
-                            setTimeout(function () {
-                                $("#alert-text").html("Click the Light Sabers to ATTACK!");
-                                $("#attackBtn").css("pointer-events", "auto");
-                            }, 2300);
-                        }*/
+                        setTimeout(function () {
+                        $("#alert-text").html("You Lose!");
+                       
+                        $(".btn-row").css("display", "block");}, 3000);
+
+                        } 
 
               
 
