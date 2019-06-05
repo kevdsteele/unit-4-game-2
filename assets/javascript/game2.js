@@ -213,10 +213,13 @@ $(document).ready(function () {
             $("#attackBtn").css("pointer-events", "none");
 
 
-
+            
             /* apply battle damage to defender then player*/
-            if (playerHP && defenderHP > 0) {
+            if (playerHP > 0)  {
+                /*player attacks first*/
                 defenderHP -= playerAP;
+                 /*increase attack power by base mode*/
+                 playerAP += attackMod;
 
                 /*update the health bar and stats*/
                 $("#pbr" + defenderID).attr("aria-valuenow", defenderHP);
@@ -225,40 +228,46 @@ $(document).ready(function () {
                 var defenderHPper = (65 * defenderHP) / defenderStartHP;
                 $("#pbr" + defenderID).attr("style", "width: " + defenderHPper + "%");
                 $("#defenderStats").html(playerName + " did " + playerAP + " points of damage to " + defenderName);
-                /*increase attack power by base mode*/
-                playerAP += attackMod;
+               
 
                 /*Make sure the enemy is still alive given player does damage first*/
                 if (defenderHP > 0) {
                     /*make sure the attack button cannot be pressed during attack effects*/
                     $("#attackBtn").css("pointer-events", "none");
-
+                    playerHP -= defenderDP;
                     /*Use timeout to approximate a turn based attack */
                     setTimeout(function () {
-
+                        
                         $("#attackAudio")[0].play();
                         $("#attackBtn").effect("pulsate");
-                        playerHP -= defenderDP;
                         $("#pbl" + playerID).html(playerHP + " HPS");
                         var playerHPper = (65 * playerHP) / playerStartHP;
                         $("#pbr" + playerID).attr("style", "width: " + playerHPper + "%");
                         $("#playerStats").html(defenderName + " did " + defenderDP + " points of damage to " + playerName);
                     }, 1500);
-                    setTimeout(function () {
-                        $("#alert-text").html("Click the Light Sabers to ATTACK!");
-                        $("#attackBtn").css("pointer-events", "auto");
-                    }, 2300);
-                    /*Check to see if player has lost */
-                    if (playerHP <= 0) {
+
+                  
+                    
+                     /*Check to see if player has lost */
+
+                        if (playerHP <= 0)  {
                         console.log("You Lose");
                         $("#alert-text").html("You Lose!");
                         $("#playerPlaceholder").hide();
                         $('#attack-section').hide();
                         $(".btn-row").css("display", "block");
 
-                    }
+                        } /*else {
+                            setTimeout(function () {
+                                $("#alert-text").html("Click the Light Sabers to ATTACK!");
+                                $("#attackBtn").css("pointer-events", "auto");
+                            }, 2300);
+                        }*/
+
+              
 
                 } else {
+                    
                     /*Player has won */
 
                     /*check to see if all players defeated based on object length */
@@ -288,13 +297,23 @@ $(document).ready(function () {
                     }
 
 
+                }
+
+
+
+                
+
+                
+                    
+
+                
 
 
 
 
                 }
 
-            }
+            
 
         });
     }
